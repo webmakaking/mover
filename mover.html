@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="mover.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function back(t) {
+                var x=2;
+                return Math.pow(t, 2) * ((x + 1) * t - x)
+            }
+            var mover1=new Mover('.moveMe', {mode:corners.topLeft});
+            var mover2=new SmoothMover(null, {mode:corners.center, animationFunction:back});
+        })
+    </script>
+</head>
+<body>
+    <div class="moveMe" style="width: 100px; height: 20px; background-color: #ead; position: absolute"></div>
+</body>
+</html>
